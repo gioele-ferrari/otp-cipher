@@ -1,5 +1,5 @@
 
-# One-Time Pad (OTP) Encryption/Decryption Tool 🔐💻
+# Cifrario One-Time Pad (OTP) 🔐💻
 
 Questo progetto è un'implementazione di un semplice algoritmo di cifratura **One-Time Pad (OTP)**, scritto in **Python**. L'OTP è un metodo di cifratura crittograficamente sicuro, dove una chiave casuale della stessa lunghezza del messaggio viene utilizzata una sola volta per cifrare e decifrare un messaggio. Il programma supporta la lettura da file, la generazione di keystream casuali, la cifratura e la decifratura di messaggi.
 
@@ -12,7 +12,7 @@ Segui questi passaggi per eseguire il progetto localmente:
 Scarica il progetto localmente eseguendo il seguente comando:
 
 ```bash
-git clone https://github.com/gioele-ferrari/otp-encryption-tool.git
+git clone "https://github.com/gioele-ferrari/otp-cipher.git"
 ```
 
 ### 2. Accedi alla cartella del progetto
