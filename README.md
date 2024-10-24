@@ -20,7 +20,7 @@ git clone "https://github.com/gioele-ferrari/otp-cipher.git"
 Passa alla cartella del progetto appena scaricata:
 
 ```bash
-cd otp-encryption-tool
+cd otp-cipher
 ```
 
 ### 3. Esegui il programma
