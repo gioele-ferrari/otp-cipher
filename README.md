@@ -1,7 +1,7 @@
 
 # Cifrario One-Time Pad (OTP) 🔐💻
 
-Questo progetto è un'implementazione di un semplice algoritmo di cifratura **One-Time Pad (OTP)**, scritto in **Python**. L'OTP è un metodo di cifratura crittograficamente sicuro, dove una chiave casuale della stessa lunghezza del messaggio viene utilizzata una sola volta per cifrare e decifrare un messaggio. Il programma supporta la lettura da file, la generazione di keystream casuali, la cifratura e la decifratura di messaggi.
+Questo progetto è un'implementazione di un semplice algoritmo di cifratura **One-Time Pad (OTP)**, scritto in **Python**. L'OTP è un metodo di cifratura crittograficamente sicuro, dove una chiave casuale della stessa lunghezza del messaggio viene utilizzata una sola volta per cifrare e decifrare un messaggio. Il programma supporta la lettura da file, la generazione di keystream pseudo-casuali basata su una password, la cifratura e la decifratura di messaggi.
 
 ## 🏁 Come iniziare
 
@@ -36,16 +36,17 @@ Il programma può cifrare e decifrare file di testo utilizzando un keystream gen
 Per cifrare un file di input, usa il seguente comando:
 
 ```bash
-py main.py -c -in <input_file> -out <output_cipher_file>
+py main.py -c -in <input_file> -out <output_cipher_file> -key <password_key>
 ```
 
 - `<input_file>`: Il file di testo che vuoi cifrare.
 - `<output_cipher_file>`: Il file in cui vuoi salvare il testo cifrato.
+- `<password_key>`: La password per cifrare il tuo messaggio.
 
 Esempio:
 
 ```bash
-py main.py -c -in message.txt -out cipher.txt
+py main.py -c -in message.txt -out cipher.txt -key prova
 ```
 
 Questo comando genererà due file:
@@ -58,20 +59,20 @@ Questo comando genererà due file:
 Per decifrare un file cifrato, usa il seguente comando:
 
 ```bash
-py main.py -d -in <input_cipher_file> -out <output_plaintext_file> -key <keystream_file>
+py main.py -d -in <input_cipher_file> -out <output_plaintext_file> -key <password_key>
 ```
 
 - `<input_cipher_file>`: Il file cifrato che desideri decifrare.
 - `<output_plaintext_file>`: Il file in cui vuoi salvare il messaggio decifrato.
-- `<keystream_file>`: Il file contenente il keystream generato durante la cifratura.
+- `<password_key>`:La chiave con cui abbiamo generato il file cifrato di partenza.
 
 Esempio:
 
 ```bash
-py main.py -d -in cipher.txt -out decrypted_message.txt -key keystream
+py main.py -d -in cipher.txt -out decrypted_message.txt -key prova
 ```
 
 ### Limitazioni
 
-- La chiave generata (keystream) deve essere usata una sola volta per ogni messaggio, come suggerisce la teoria del One-Time Pad. Riutilizzare una chiave comprometterebbe la sicurezza del messaggio.
+- La chiave generata (keystream) dalla chiave (una password) deve essere usata una sola volta per ogni messaggio, come suggerisce la teoria del One-Time Pad. Riutilizzare una chiave comprometterebbe la sicurezza del messaggio.
 - La lunghezza della chiave deve essere pari alla lunghezza del messaggio da cifrare.
